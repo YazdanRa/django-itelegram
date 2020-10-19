@@ -20,13 +20,12 @@ if sys.argv[-1] == "publish":
         print('Wheel library missing. Please run "pip install wheel"')
         sys.exit()
     os.system("python setup.py sdist upload")
-    os.system("python setup.py bdist_wheel upload")
-    sys.exit()
-
-if sys.argv[-1] == "tag":
-    print("Tagging the version on github:")
-    os.system("git tag -a %s -m 'version %s'" % (version, version))
-    os.system("git push --tags")
+    os.system("python setup.py bdist_wheel")
+    os.system("twine upload dist/*")
+    try:
+        os.system("new-release")
+    except:
+        pass
     sys.exit()
 
 readme = open("README.rst").read()
