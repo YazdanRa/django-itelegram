@@ -26,7 +26,7 @@ def home(request):
 
 @csrf_exempt
 def webhook(request, bot_token):
-    # verifico la validità del token
+    # check the validity of the token
     bot = DjangoTelegramBot.getBot(bot_id=bot_token, safe=False)
     if bot is None:
         logger.warn("Request for not found token: {}".format(bot_token))
