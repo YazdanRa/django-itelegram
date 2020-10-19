@@ -22,10 +22,8 @@ if sys.argv[-1] == "publish":
     os.system("python setup.py sdist upload")
     os.system("python setup.py bdist_wheel")
     os.system("twine upload dist/*")
-    try:
-        os.system("new-release")
-    except:
-        pass
+    os.system("git tag v{}".format(version))
+    os.system("git push --tags")
     sys.exit()
 
 readme = open("README.rst").read()
