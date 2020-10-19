@@ -1,5 +1,5 @@
 from django.utils.translation import gettext_lazy as _
-from django.contrib.postgres.fields import JSONField, ArrayField
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 
@@ -71,13 +71,41 @@ class TelegramUpdate(models.Model):
         max_length=32,
         help_text=_("Displays the bot which has participated is in this update."),
     )
-    message = JSONField(null=True, blank=True)
-    edited_message = JSONField(null=True, blank=True)
-    channel_post = JSONField(null=True, blank=True)
-    edited_channel_post = JSONField(null=True, blank=True)
-    inline_query = JSONField(null=True, blank=True)
-    chosen_inline_result = JSONField(null=True, blank=True)
-    callback_query = JSONField(null=True, blank=True)
+    message = models.JSONField(
+        verbose_name=_("Telegram Update message"),
+        null=True,
+        blank=True,
+    )
+    edited_message = models.JSONField(
+        verbose_name=_("Telegram Update edited message"),
+        null=True,
+        blank=True,
+    )
+    channel_post = models.JSONField(
+        verbose_name=_("Telegram Update channel post"),
+        null=True,
+        blank=True,
+    )
+    edited_channel_post = models.JSONField(
+        verbose_name=_("Telegram Update edited channel post"),
+        null=True,
+        blank=True,
+    )
+    inline_query = models.JSONField(
+        verbose_name=_("Telegram Update inline query"),
+        null=True,
+        blank=True,
+    )
+    chosen_inline_result = models.JSONField(
+        verbose_name=_("Telegram Update chosen inline result"),
+        null=True,
+        blank=True,
+    )
+    callback_query = models.JSONField(
+        verbose_name=_("Telegram Update callback query"),
+        null=True,
+        blank=True,
+    )
 
     class Meta:
         verbose_name = _("Telegram Update")
