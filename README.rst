@@ -1,3 +1,9 @@
+.. image:: https://img.shields.io/pypi/pyversions/django-itelegram.svg
+   :target: https://pypi.python.org/pypi/django-itelegram/
+
+.. image:: https://img.shields.io/pypi/v/django-itelegram.svg
+   :target: https://pypi.python.org/pypi/django-itelegram/
+
 .. image:: https://img.shields.io/github/license/YazdanRa/django-itelegram.svg
    :target: https://github.com/YazdanRa/django-itelegram/blob/master/LICENSE
 
@@ -18,7 +24,7 @@ Compatibility
 =============
 
 - Python: **3.6**, **3.7**, **3.8**
-- Django: **2.2**, **3.0**, **3.1**, **3.2**
+- Django: **3.0**, **3.1**, **3.2**
 
 
 Usage
