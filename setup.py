@@ -32,11 +32,11 @@ readme = open("README.rst").read()
 history = open("HISTORY.rst").read().replace(".. :changelog:", "")
 
 setup(
-    name="django-itelegram",
+    name="Django-iTelegram",
     version=version,
     description="It's a library for building Telegram bot on Django with extra built-in features",
     long_description=readme + "\n\n" + history,
-    author="django-itelegram",
+    author="Yazdan Ranjbar",
     author_email="yazdan_ra@icloud.com",
     url="https://github.com/YazdanRa/django-itelegram",
     packages=[
