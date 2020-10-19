@@ -15,8 +15,8 @@ from telegram.error import InvalidToken, RetryAfter, TelegramError
 from telegram.ext import Dispatcher, Updater, messagequeue as mq
 from telegram.utils.request import Request
 
-from .bot import BotData
-from .mqbot import MQBot
+from django_itelegram.bot import BotData
+from django_itelegram.mqbot import MQBot
 
 logger = logging.getLogger(__name__)
 

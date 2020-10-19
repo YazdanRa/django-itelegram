@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
 from django.conf import settings
 from django.http import JsonResponse
-from django_telegrambot.apps import DjangoTelegramBot
+from django_itelegram.apps import DjangoTelegramBot
 from django.views.decorators.csrf import csrf_exempt
 import sys
 import json
@@ -26,7 +26,6 @@ def home(request):
 
 @csrf_exempt
 def webhook(request, bot_token):
-
     # verifico la validità del token
     bot = DjangoTelegramBot.getBot(bot_id=bot_token, safe=False)
     if bot is None:
