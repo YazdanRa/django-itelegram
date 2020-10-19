@@ -48,6 +48,10 @@ class TelegramUser(models.Model):
     date_met = models.DateTimeField(auto_now_add=True)
     last_seen = models.DateTimeField(null=True, blank=True)
 
+    class Meta:
+        verbose_name = _("Telegram User")
+        verbose_name_plural = _("Telegram Users")
+
     def __str__(self):
         return "{} {} (@{})".format(self.first_name, self.last_name, self.username)
 
@@ -74,6 +78,10 @@ class TelegramUpdate(models.Model):
     inline_query = JSONField(null=True, blank=True)
     chosen_inline_result = JSONField(null=True, blank=True)
     callback_query = JSONField(null=True, blank=True)
+
+    class Meta:
+        verbose_name = _("Telegram Update")
+        verbose_name_plural = _("Telegram Updates")
 
     def __str__(self):
         return "{} | {}".format(self.update_id, self.bot)
