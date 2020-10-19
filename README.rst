@@ -30,6 +30,7 @@ TODO :D
 License
 =======
 
-MIT
+`MIT`_
 
 .. _`django-telegrambot`: https://pypi.org/project/django-telegrambot/
+.. _`MIT`: https://github.com/YazdanRa/django-itelegram/blob/master/LICENSE
