@@ -228,7 +228,7 @@ class DjangoTelegramBot(AppConfig):
                     return
                 except RetryAfter as er:
                     logger.debug(
-                        ('Error: "{message}". Will retry in {retry_after} seconds').format(
+                        'Error: "{message}". Will retry in {retry_after} seconds'.format(
                             message=er.message, retry_after=er.retry_after
                         )
                     )
@@ -259,7 +259,7 @@ class DjangoTelegramBot(AppConfig):
                     return
                 except RetryAfter as er:
                     logger.debug(
-                        ('Error: "{message}". Will retry in {retry_after} seconds').format(
+                        'Error: "{message}". Will retry in {retry_after} seconds'.format(
                             message=er.message, retry_after=er.retry_after
                         )
                     )
@@ -300,6 +300,7 @@ class DjangoTelegramBot(AppConfig):
             return True
 
         # import telegram bot handlers for all INSTALLED_APPS
+        # it allows us to use the telegram bots in all installed apps!
         for app_config in apps.get_app_configs():
             if module_has_submodule(app_config.module, TELEGRAM_BOT_MODULE_NAME):
                 module_name = "%s.%s" % (app_config.name, TELEGRAM_BOT_MODULE_NAME)
@@ -309,7 +310,7 @@ class DjangoTelegramBot(AppConfig):
         num_bots = len(DjangoTelegramBot.__used_tokens)
         if self.mode == POLLING_MODE and num_bots > 0:
             logger.info(
-                ("Please manually start polling update for {0} bot{1}. Run command{1}:").format(
+                "Please manually start polling update for {0} bot{1}. Run command{1}:".format(
                     num_bots, "s" if num_bots > 1 else ""
                 )
             )
