@@ -3,7 +3,7 @@ import telegram
 
 
 class MQBot(telegram.bot.Bot):
-    '''A subclass of Bot which delegates send method handling to MQ'''
+    """A subclass of Bot which delegates send method handling to MQ"""
 
     def __init__(self, mqueue=None, is_queued_def=True, *args, **kwargs):
         super(MQBot, self).__init__(*args, **kwargs)
@@ -20,13 +20,13 @@ class MQBot(telegram.bot.Bot):
 
     @mq.queuedmessage
     def send_message(self, *args, **kwargs):
-        '''Wrapped method would accept new `queued` and `isgroup`
-        OPTIONAL arguments'''
+        """Wrapped method would accept new `queued` and `isgroup`
+        OPTIONAL arguments"""
         return super(MQBot, self).send_message(*args, **kwargs)
 
     @mq.queuedmessage
     def edit_message_text(self, *args, **kwargs):
 
-        '''Wrapped method would accept new `queued` and `isgroup`
-        OPTIONAL arguments'''
+        """Wrapped method would accept new `queued` and `isgroup`
+        OPTIONAL arguments"""
         return super(MQBot, self).edit_message_text(*args, **kwargs)

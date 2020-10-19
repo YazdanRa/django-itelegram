@@ -4,17 +4,17 @@ from telegram.ext import Dispatcher, Updater
 
 class BotData:
     def __init__(
-            self,
-            token,
-            *,
-            unique_id=None,
-            use_context=False,
-            allowed_updates=None,
-            timeout=None,
-            proxy=None,
-            instance: Bot = None,
-            dispatcher: Dispatcher = None,
-            updater: Updater = None
+        self,
+        token,
+        *,
+        unique_id=None,
+        use_context=False,
+        allowed_updates=None,
+        timeout=None,
+        proxy=None,
+        instance: Bot = None,
+        dispatcher: Dispatcher = None,
+        updater: Updater = None
     ):
         self.token = token
         self.unique_id = unique_id

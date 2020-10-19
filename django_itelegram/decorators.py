@@ -36,4 +36,5 @@ def telegram_perm(perm):
             return True
         # User has not permissions
         return False
+
     return user_passes_test(check_perms)
