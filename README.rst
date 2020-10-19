@@ -157,7 +157,7 @@ Add the following line to the url to configure the urls.
 .. code-block:: python
 
     urlpatterns = [
-        # Other urls patters
+        # Other urls patterns
         url(r"^", include("django_itelegram.urls")),
     ]
 

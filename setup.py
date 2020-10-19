@@ -43,7 +43,7 @@ setup(
     download_url="https://pypi.python.org/pypi/django-itelegram",
     packages=find_packages(".", include=("django-itelegram", "django-itelegram.*")),
     include_package_data=True,
-    install_requires=["django>=3,0", "python-telegram-bot>=6.0.1"],
+    install_requires=["django>=3.0", "python-telegram-bot>=6.0.1"],
     extras_require={"dev": DEV_REQ, "test": TEST_REQ},
     license="MIT",
     zip_safe=False,
