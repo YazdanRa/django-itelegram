@@ -11,7 +11,7 @@ Django iTelegram
 =================
 
 It's a library for building Telegram bot on Django with extra built-in options.
-created from `django-telegrambot` with a lot of extra features
+created from `django-telegrambot`_ with a lot of extra features
 
 
 Compatibility
