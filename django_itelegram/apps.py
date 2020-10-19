@@ -1,5 +1,4 @@
 # coding=utf-8
-# django_itelegram/apps.py
 import importlib
 import logging
 import os.path
@@ -36,8 +35,8 @@ class classproperty(property):
 
 
 class DjangoTelegramBot(AppConfig):
-    name = "django_telegrambot"
-    verbose_name = "Django TelegramBot"
+    name = "django_itelegram"
+    verbose_name = "Django iTelegram"
     ready_run = False
     bots_data: List[BotData] = list()
     __used_tokens = set()
