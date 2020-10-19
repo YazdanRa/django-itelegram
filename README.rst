@@ -1,3 +1,5 @@
+.. image:: https://github.com/YazdanRa/django-itelegram/blob/master/django_itelegram/static/img/iTelegram.png?raw=true
+
 .. image:: https://img.shields.io/pypi/pyversions/django-itelegram.svg
    :target: https://pypi.python.org/pypi/django-itelegram/
 
