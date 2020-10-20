@@ -1,9 +1,13 @@
-from django.utils.translation import gettext_lazy as _
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
+from django.utils.translation import gettext_lazy as _
+
+from django_itelegram.managers import TelegramUserManager
 
 
 class TelegramUser(models.Model):
+    objects = TelegramUserManager
+
     id = models.BigIntegerField(
         verbose_name=_("Telegram User ID"),
         primary_key=True,
