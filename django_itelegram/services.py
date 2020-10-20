@@ -1,20 +1,26 @@
+import logging
+
 from django.conf import settings
 from django.utils.timezone import now
-from telegram import Update
+from telegram import Update, TelegramError
 from telegram.ext import CallbackContext
 
 from django_itelegram.defaults import telegram_internal_error_text, telegram_parse_mode
 from django_itelegram.models import TelegramUpdate, TelegramUser
 
+logger = logging.getLogger(__name__)
+
 
 def process_error(update: Update, context: CallbackContext):
+    logger.error("Internal Error: {}".format(context.error))
     try:
         context.bot.send_message(
             chat_id=update.message.from_user.id,
             text=getattr(settings, "TELEGRAM_INTERNAL_ERROR_TEXT", telegram_internal_error_text),
             parse_mode=getattr(settings, "TELEGRAM_PARSE_MODE", telegram_parse_mode),
         )
-    except:
+    except TelegramError as error:
+        logger.error("Error: {message}".format(message=error))
         pass
     raise context.error
 
