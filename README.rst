@@ -173,5 +173,10 @@ License
 =======
 `MIT`_
 
+Note
+====
+(1) This is a fork from `django-telegrambot`_!
+(2) Thanks to **Negar Nadian** for designing the Django iTelegram Logo.
+
 .. _`django-telegrambot`: https://pypi.org/project/django-telegrambot/
 .. _`MIT`: https://github.com/YazdanRa/django-itelegram/blob/master/LICENSE
