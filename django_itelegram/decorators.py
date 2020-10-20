@@ -1,8 +1,11 @@
 from functools import wraps
 
+from django.conf import settings
 from django.contrib.auth.models import User
 from telegram import Update
 from telegram.ext import CallbackContext, DispatcherHandlerStop
+
+from django_itelegram.defaults import telegram_not_logged_in_text, telegram_permission_denied_text, telegram_parse_mode
 
 
 def user_passes_test(test_func):
@@ -13,11 +16,19 @@ def user_passes_test(test_func):
             try:
                 user = User.objects.get(telegram_id=chat_id)
             except User.DoesNotExist:
-                context.bot.send_message(chat_id, "Permission Denied!")
+                context.bot.send_message(
+                    chat_id=chat_id,
+                    text=getattr(settings, "TELEGRAM_NOT_LOGGED_IN_TEXT", telegram_not_logged_in_text),
+                    parse_mode=getattr(settings, "TELEGRAM_PARSE_MODE", telegram_parse_mode),
+                )
                 raise DispatcherHandlerStop
             if test_func(user):
                 return view_func(update, context, *args, **kwargs)
-            context.bot.send_message(chat_id, "Permission Denied!")
+            context.bot.send_message(
+                chat_id=chat_id,
+                text=getattr(settings, "TELEGRAM_PERMISSION_DENIED_TEXT", telegram_permission_denied_text),
+                parse_mode=getattr(settings, "TELEGRAM_PARSE_MODE", telegram_parse_mode),
+            )
             raise DispatcherHandlerStop
 
         return _wrapped_view
