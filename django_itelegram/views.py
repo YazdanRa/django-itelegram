@@ -1,17 +1,17 @@
 # coding=utf-8
-from django.shortcuts import render
-from django.contrib.admin.views.decorators import staff_member_required
-from django.conf import settings
-from django.http import JsonResponse
-from django_itelegram.apps import DjangoTelegramBot
-from django.views.decorators.csrf import csrf_exempt
-import sys
 import json
+import logging
+import sys
+
 import telegram
+from django.conf import settings
+from django.contrib.admin.views.decorators import staff_member_required
+from django.http import JsonResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from telegram.error import TelegramError
 
-# import the logging library
-import logging
+from django_itelegram.apps import DjangoTelegramBot
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 def home(request):
     bot_list = [bot.instance for bot in DjangoTelegramBot.bots_data]
     context = {"bot_list": bot_list, "update_mode": settings.DJANGO_TELEGRAMBOT.get("MODE", "WEBHOOK")}
-    return render(request, "django_telegrambot/index.html", context)
+    return render(request, "django_itelegram/index.html", context)
 
 
 @csrf_exempt
