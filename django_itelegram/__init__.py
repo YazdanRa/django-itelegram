@@ -6,5 +6,5 @@ class GlobalHandler(Handler):
         return True
 
 
-__version__ = "1.0.4"
+__version__ = "1.0.4.1"
 default_app_config = "django_itelegram.apps.DjangoTelegramBot"
