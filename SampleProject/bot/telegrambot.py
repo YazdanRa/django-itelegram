@@ -1,9 +1,9 @@
 import logging
 
-from SampleProject.bot.handlers import start
-from django_itelegram import GlobalHandler
-from django_itelegram.apps import DjangoTelegramBot
-from django_itelegram.services import process_update, process_error
+from itelegram import GlobalHandler
+from itelegram.apps import DjangoTelegramBot
+from itelegram.services import process_update, process_error
+from .handlers import start
 
 # Logging
 logger = logging.getLogger(__name__)

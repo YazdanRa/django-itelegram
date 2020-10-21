@@ -1,6 +1,6 @@
+from django.conf import settings
 from django.conf.urls import url
 from django_itelegram import views
-from django.conf import settings
 
 webhook_base = settings.DJANGO_TELEGRAMBOT.get("WEBHOOK_PREFIX", "/")
 if webhook_base.startswith("/"):

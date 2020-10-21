@@ -1,5 +1,5 @@
-from telegram.ext import messagequeue as mq
 import telegram
+from telegram.ext import messagequeue as mq
 
 
 class MQBot(telegram.bot.Bot):

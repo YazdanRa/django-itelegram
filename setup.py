@@ -6,14 +6,14 @@ import sys
 
 from setuptools import find_packages
 
-import django_itelegram
+import itelegram
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
-version = django_itelegram.__version__
+version = itelegram.__version__
 
 if sys.argv[-1] == "publish":
     try:
@@ -24,8 +24,6 @@ if sys.argv[-1] == "publish":
     os.system("python setup.py sdist upload")
     os.system("python setup.py bdist_wheel")
     os.system("twine upload dist/*")
-    os.system("git tag v{}".format(version))
-    os.system("git push --tags")
     sys.exit()
 
 README = open("README.rst", "r", encoding="UTF-8").read()
@@ -47,7 +45,7 @@ setup(
     extras_require={"dev": DEV_REQ, "test": TEST_REQ},
     license="MIT",
     zip_safe=False,
-    keywords=["django-itelegram", "django", "telegram", "django-telegrambot", "python-telegram-bot"],
+    keywords=["itelegram", "django-itelegram", "django", "telegram", "django-telegrambot", "python-telegram-bot"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Django",

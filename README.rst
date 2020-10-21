@@ -23,7 +23,7 @@ created from `django-telegrambot`_ with a lot of extra features
 
 Compatibility
 =============
-- Python: **3.6**, **3.7**, **3.8**
+- Python: **3.5**, **3.6**, **3.7**, **3.8**
 - Django: **3.0**, **3.1**, **3.2**
 
 
@@ -38,13 +38,13 @@ You can install this package by the PyPI with the following command line:
 
 Configuration
 ==============
-Add ``django-itelegram`` and your bot app to ``INSTALLED_APPS``:
+Add ``itelegram`` and your bot app to ``INSTALLED_APPS``:
 
 .. code-block:: python
 
     INSTALLED_APPS = [
         # Other apps
-        "django-itelegram",
+        "itelegram",
         "YOUR_BOT_APP",
     ]
 
@@ -160,7 +160,7 @@ Add the following line to the url to configure the urls.
 
     urlpatterns = [
         # Other urls patterns
-        url(r"^", include("django_itelegram.urls")),
+        url(r"^", include("itelegram.urls")),
     ]
 
 
