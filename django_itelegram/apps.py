@@ -35,7 +35,7 @@ class classproperty(property):
 
 
 class DjangoTelegramBot(AppConfig):
-    name = "django_itelegram"
+    name = "itelegram"
     verbose_name = "Django iTelegram"
     ready_run = False
     bots_data: List[BotData] = list()
