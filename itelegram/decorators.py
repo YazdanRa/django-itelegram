@@ -2,9 +2,10 @@ from functools import wraps
 
 from django.conf import settings
 from django.contrib.auth.models import User
-from django_itelegram.defaults import telegram_not_logged_in_text, telegram_permission_denied_text, telegram_parse_mode
 from telegram import Update
 from telegram.ext import CallbackContext, DispatcherHandlerStop
+
+from .defaults import telegram_not_logged_in_text, telegram_permission_denied_text, telegram_parse_mode
 
 
 def user_passes_test(test_func):

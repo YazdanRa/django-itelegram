@@ -10,11 +10,12 @@ from django.apps import AppConfig
 from django.apps import apps
 from django.conf import settings
 from django.utils.module_loading import module_has_submodule
-from django_itelegram.bot import BotData
-from django_itelegram.mqbot import MQBot
 from telegram.error import InvalidToken, RetryAfter, TelegramError
 from telegram.ext import Dispatcher, Updater, messagequeue as mq
 from telegram.utils.request import Request
+
+from .bot import BotData
+from .mqbot import MQBot
 
 logger = logging.getLogger(__name__)
 

@@ -2,7 +2,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from django_itelegram.managers import TelegramUserManager
+from .managers import TelegramUserManager
 
 
 class TelegramUser(models.Model):

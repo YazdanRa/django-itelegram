@@ -9,8 +9,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django_itelegram.apps import DjangoTelegramBot
 from telegram.error import TelegramError
+
+from .apps import DjangoTelegramBot
 
 # Get an instance of a logger
 logger = logging.getLogger(__name__)

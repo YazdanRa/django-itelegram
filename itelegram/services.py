@@ -2,10 +2,11 @@ import logging
 
 from django.conf import settings
 from django.utils.timezone import now
-from django_itelegram.defaults import telegram_internal_error_text, telegram_parse_mode
-from django_itelegram.models import TelegramUpdate, TelegramUser
 from telegram import Update, TelegramError
 from telegram.ext import CallbackContext
+
+from .defaults import telegram_internal_error_text, telegram_parse_mode
+from .models import TelegramUpdate, TelegramUser
 
 logger = logging.getLogger(__name__)
 
