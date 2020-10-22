@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include itelegram/static *
+recursive-include itelegram/templates *
+recursive-include docs *
