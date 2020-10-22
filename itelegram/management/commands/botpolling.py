@@ -1,10 +1,8 @@
 import logging
 
 from django.core.management.base import BaseCommand
-from django_itelegram.apps import DjangoTelegramBot
 
-
-# from telegram.ext import Updater
+from itelegram.apps import DjangoTelegramBot
 
 
 class Command(BaseCommand):
