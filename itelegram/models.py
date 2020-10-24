@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -52,9 +53,25 @@ class TelegramUser(models.Model):
     date_met = models.DateTimeField(auto_now_add=True)
     last_seen = models.DateTimeField(null=True, blank=True)
 
+    # Optional fields
+    site_user = models.OneToOneField(
+        verbose_name=_("Connected Site User"),
+        on_delete=models.SET_NULL,
+        blank=True,
+        null=True,
+        related_name="telegram",
+        to=settings.AUTH_USER_MODEL,
+    )
+    phone_number = models.CharField(
+        verbose_name=_("Phone number"),
+        max_length=16,
+        unique=True,
+    )
+
     class Meta:
         verbose_name = _("Telegram User")
         verbose_name_plural = _("Telegram Users")
+        abstract = True
 
     def __str__(self):
         return "{} {} (@{})".format(self.first_name, self.last_name, self.username)
