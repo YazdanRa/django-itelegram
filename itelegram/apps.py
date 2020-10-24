@@ -10,6 +10,7 @@ from django.apps import AppConfig
 from django.apps import apps
 from django.conf import settings
 from django.utils.module_loading import module_has_submodule
+from django.utils.translation import ugettext_lazy as _
 from telegram.error import InvalidToken, RetryAfter, TelegramError
 from telegram.ext import Dispatcher, Updater, messagequeue as mq
 from telegram.utils.request import Request
@@ -36,7 +37,7 @@ class classproperty(property):
 
 class DjangoTelegramBot(AppConfig):
     name = "itelegram"
-    verbose_name = "Django iTelegram"
+    verbose_name = _("iTelegram")
     ready_run = False
     bots_data: List[BotData] = list()
     __used_tokens = set()
