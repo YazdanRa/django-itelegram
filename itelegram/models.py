@@ -71,7 +71,6 @@ class TelegramUser(models.Model):
     class Meta:
         verbose_name = _("Telegram User")
         verbose_name_plural = _("Telegram Users")
-        abstract = True
 
     def __str__(self):
         return "{} {} (@{})".format(self.first_name, self.last_name, self.username)
