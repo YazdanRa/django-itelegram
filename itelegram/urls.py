@@ -12,6 +12,6 @@ if not webhook_base.endswith("/"):
     webhook_base += "/"
 
 urlpatterns = [
-    url(r"admin/itelegram", views.home, name="itelegram"),
+    url(r"admin/django-itelegram", views.home, name="itelegram"),
     url(r"{}(?P<bot_token>.+?)".format(webhook_base), views.webhook, name="webhook"),
 ]
