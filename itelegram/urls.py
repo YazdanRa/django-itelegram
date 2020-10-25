@@ -10,6 +10,6 @@ if len(webhook_base):
     webhook_base += "/"
 
 urlpatterns = [
-    path("admin", views.admin_page),
+    path("admin", views.admin_page, name="itelegram"),
     path("{}<str:bot_token>".format(webhook_base), views.webhook, name="webhook"),
 ]
