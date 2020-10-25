@@ -1,4 +1,3 @@
-# coding=utf-8
 import json
 import logging
 import sys
@@ -18,10 +17,10 @@ logger = logging.getLogger(__name__)
 
 
 @staff_member_required
-def home(request):
+def admin_page(request):
     bot_list = [bot.instance for bot in DjangoTelegramBot.bots_data]
     context = {"bot_list": bot_list, "update_mode": settings.DJANGO_TELEGRAMBOT.get("MODE", "WEBHOOK")}
-    return render(request, "django_itelegram/index.html", context)
+    return render(request, "itelegram/index.html", context)
 
 
 @csrf_exempt

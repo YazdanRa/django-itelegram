@@ -1,4 +1,3 @@
-# coding=utf-8
 import importlib
 import logging
 import os.path
@@ -144,10 +143,9 @@ class DjangoTelegramBot(AppConfig):
                 webhook_site = webhook_site[:-1]
 
             webhook_base = settings.DJANGO_TELEGRAMBOT.get("WEBHOOK_PREFIX", "/")
-            if webhook_base.startswith("/"):
-                webhook_base = webhook_base[1:]
-            if webhook_base.endswith("/"):
-                webhook_base = webhook_base[:-1]
+            webhook_base = webhook_base.replace("/", "")
+            if len(webhook_base):
+                webhook_base += "/"
 
             cert = settings.DJANGO_TELEGRAMBOT.get("WEBHOOK_CERTIFICATE", None)
             certificate = None
