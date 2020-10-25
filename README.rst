@@ -160,7 +160,7 @@ Add the following line to the url to configure the urls.
 
     urlpatterns = [
         # Other urls patterns
-        url(r"^", include("itelegram.urls")),
+        path("itelegram/", include("itelegram.urls")),
     ]
 
 
