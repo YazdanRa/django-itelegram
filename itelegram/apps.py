@@ -191,7 +191,7 @@ class DjangoTelegramBot(AppConfig):
 
                     bot.dispatcher = Dispatcher(bot.instance, None, workers=0, use_context=bot.use_context)
                     if not settings.DJANGO_TELEGRAMBOT.get("DISABLE_SETUP", False):
-                        hook_url = "{}/{}/{}/".format(webhook_site, webhook_base, bot.token)
+                        hook_url = "{}/itelegram/{}{}/".format(webhook_site, webhook_base, bot.token)
                         max_connections = b.get("WEBHOOK_MAX_CONNECTIONS", 40)
                         result = bot.instance.setWebhook(
                             hook_url,
