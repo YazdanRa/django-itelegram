@@ -191,7 +191,7 @@ class DjangoTelegramBot(AppConfig):
 
                     bot.dispatcher = Dispatcher(bot.instance, None, workers=0, use_context=bot.use_context)
                     if not settings.DJANGO_TELEGRAMBOT.get("DISABLE_SETUP", False):
-                        hook_url = "{}/itelegram/{}{}/".format(webhook_site, webhook_base, bot.token)
+                        hook_url = "{}/itelegram/{}{}".format(webhook_site, webhook_base, bot.token)
                         max_connections = b.get("WEBHOOK_MAX_CONNECTIONS", 40)
                         result = bot.instance.setWebhook(
                             hook_url,
@@ -314,4 +314,7 @@ class DjangoTelegramBot(AppConfig):
             )
             for token in DjangoTelegramBot.__used_tokens:
                 updater = DjangoTelegramBot.get_updater(bot_id=token)
-                logger.info("python manage.py botpolling --username={}".format(updater.bot.username))
+                if updater is not None:
+                    logger.info("python manage.py botpolling --username={}".format(updater.bot.username))
+                else:
+                    logger.warn("updater got the None value!")
