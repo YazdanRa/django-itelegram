@@ -66,6 +66,8 @@ class TelegramUser(models.Model):
         verbose_name=_("Phone number"),
         max_length=16,
         unique=True,
+        null=True,
+        blank=True,
     )
 
     class Meta:

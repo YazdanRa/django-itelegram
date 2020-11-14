@@ -57,7 +57,7 @@ class Profile(admin.ModelAdmin):
         (_("Telegram data"), {"fields": ("is_bot", "language_code", "bots")}),
         (
             _("Last updates"),
-            {"fields": ("date_met", "last_login")},
+            {"fields": ("date_met", "last_seen")},
         ),
     )
 
