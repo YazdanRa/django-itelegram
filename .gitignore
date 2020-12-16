@@ -131,3 +131,9 @@ dmypy.json
 
 settings.py
 make_migrations.py
+
+
+# Sample Test Project
+SamplePrpject/*
+bot/*
+manage.py
