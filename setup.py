@@ -12,7 +12,7 @@ dev_requirements = ["black", "pre-commit", "psycopg2-binary"]
 
 setup(
     name="django-itelegram",
-    version="1.2.5",
+    version="1.2.6",
     description="Developing Telegram bots on Django with extra built-in features",
     long_description=README,
     author="Yazdan Ranjbar",
