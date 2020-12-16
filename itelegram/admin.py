@@ -31,6 +31,7 @@ class Profile(admin.ModelAdmin):
     list_display = ["id", "username", "full_name", "is_bot", linkify("site_user")]
     list_display_links = ["id", "username"]
     list_filter = ["is_bot", "language_code", "date_met", "last_seen", "bots"]
+    list_select_related = ["site_user"]
     readonly_fields = ["id", "bots", "username", "first_name", "last_name", "date_met", "last_seen"]
     search_fields = [
         # Telegram fields
@@ -50,6 +51,7 @@ class Profile(admin.ModelAdmin):
                 "fields": (
                     "username",
                     ("first_name", "last_name"),
+                    "site_user",
                     "phone_number",
                 )
             },
